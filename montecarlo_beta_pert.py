@@ -31,11 +31,6 @@ def extraer_actividades(): # Extrae actividades
 def pert_aleatorio(optimista, medio, pesimista, tamanio=1): # Valores random de la función beta pert
     alpha = 1 + 4 * ((medio - optimista) / (pesimista - optimista)) # ALPHA, valor necesario para la distribución beta
     beta = 1 + 4 * ((pesimista - medio) / (pesimista - optimista)) # BETA, valor necesario para la distribución beta
-    costo_medio = (optimista + 4 * medio + pesimista) / 6 # Costo medio
-    """ COMO NO TENEMOS CONFIANZA EN NUESTRAS ESTIMACIONES USAMOS LA 
-    DISTRIBUCIÓN TRIANGULAR (EN LUGAR DE LA BETA) Y UTILIZAMOS ESTE CALCULO DE TIEMPO 
-    medio: ( optimista + 4 x medio + pesimita ) / 6 , EN 
-    LUGAR DE HACER: ( optimista + 4 x medio + pesimista ) / 6 """
     return np.random.beta(alpha, beta, tamanio) * (pesimista - optimista) + optimista   # Ajustamos el valor, ya que random.beta genera un número con 
                                                                                         # una distribución beta en el intervalo de [0,1]
 
@@ -66,18 +61,18 @@ def valores_totales_aleatorios(): # Genera los valores totales aleatorios en bas
         resultados.append(tiempo_proyecto) # Lo repite la cantidad de veces que sean las simulaciones
     return resultados
 
-def estadisticas(q1 = 0.5, q2 = 0.75, q3 = 0.95):
+def estadisticas(q1 = 0.5, q2 = 0.75, q080 = 0.80, q090 = 0.90):
     global resultados_df
     # Estadísticas descriptivas de la duración del proyecto
-    resultados_df = pd.DataFrame(valores_totales_aleatorios(), columns=['Project Duration'])
-    estadistica = resultados_df.describe(percentiles=[q1, q2, q3])
+    resultados_df = pd.DataFrame(valores_totales_aleatorios(), columns=['Duración del proyecto'])
+    estadistica = resultados_df.describe(percentiles=[q1, q2, q080, q090])
     return estadistica
 
 ruta = r'c:\UNI\Materias\Formulación y evaluación\Proyecto\Python\excel\PERT.xlsx'
 
 def mostrar_datos():
     print(estadisticas())
-    resultados_df.hist(bins=50)
+    resultados_df.hist(bins=60)
     plt.title('Distribución de la Duración del Proyecto')
     plt.xlabel('Duración del Proyecto')
     plt.ylabel('Frecuencia')
