@@ -3,17 +3,7 @@
 #### Nos retorna: 
 ## Distribución Beta Pert
 
-       Duración del proyecto DIS. BETA PERT
-count                         100000.000000
-mean                             120.012274
-std                                2.914939
-min                              109.242376
-25%                              118.004746
-50%                              119.977727
-75%                              121.979603
-80%                              122.482759
-90%                              123.792845
-max                              132.678031
+![image](https://github.com/user-attachments/assets/088264cb-761f-4606-8e95-e500732c12cf)
 
 #### Distribución de probabilidad total
 
@@ -26,16 +16,8 @@ max                              132.678031
 
 ## Distribución Triangular
 
-       Duración del proyecto DIS. TRIANGULAR
-count                          100000.000000
-mean                              121.019920
-std                                 3.290673
-min                               108.608065
-25%                               118.749891
-50%                               120.981680
-75%                               123.254476
-80%                               123.809798
-90%                               125.295086
+![image](https://github.com/user-attachments/assets/98c1c922-cb8d-44eb-a927-24424783edf8)
+
 
 #### Distribución de probabilidad total
 
@@ -49,7 +31,7 @@ min                               108.608065
 
 ## Este excel puede completarse, respetando las columnas y específicando las actividades previas:
 
-# https://docs.google.com/spreadsheets/d/1y9NTNW9An1p4-T1Kx6vJVybdY4Baq0e2/edit?gid=851942186#gid=851942186
+#### https://docs.google.com/spreadsheets/d/1y9NTNW9An1p4-T1Kx6vJVybdY4Baq0e2/edit?gid=851942186#gid=851942186
 
 ## Deberán completarse estas columnas, respetando su forma y orden
 
@@ -57,6 +39,6 @@ min                               108.608065
 
 ## Luego, se descarga y se agrega como archivo a este Colab.
 
-# https://colab.research.google.com/drive/1fyJspXXxc3DP0hogx1L2M3ppEZtf4i_x?usp=sharing
+#### https://colab.research.google.com/drive/1fyJspXXxc3DP0hogx1L2M3ppEZtf4i_x?usp=sharing
 
 ##  A continuación, ejecutamos todas las celdas e ingresamos el número de simulaciones que vamos a querer ejecutar.
